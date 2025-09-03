@@ -86,20 +86,16 @@ func (g *geminiService) GetChatResponse(prompt string) (string, error) {
 
 func (g *geminiService) AnalyseSolution(question string, solution string) (string, error) {
 	prompt := fmt.Sprintf(constants.SolutionAnalysisPrompt, question, solution)
-	fmt.Println(prompt)
 	return g.sendMessage(prompt)
 }
 
 func (g *geminiService) GetHints(question string) (string, error) {
 	prompt := fmt.Sprintf(constants.GetHintsPrompt, question)
-	fmt.Println(prompt)
 	return g.sendMessage(prompt)
 }
 
-// ReviewCode implements GenAIService
 func (g *geminiService) ReviewCode(code string, question string) (string, error) {
 	prompt := fmt.Sprintf(constants.CodeReviewPrompt, code, question)
-	fmt.Println(prompt)
 	return g.sendMessage(prompt)
 }
 
