@@ -18,6 +18,7 @@ func startServer(server *http.Server) {
 	if err != nil && err != http.ErrServerClosed {
 		log.Fatalf("Server failed to start: %v", err)
 	}
+
 }
 
 func main() {
